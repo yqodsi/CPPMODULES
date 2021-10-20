@@ -7,9 +7,12 @@ Fixed::Fixed() : value(0)
 
 Fixed::Fixed(int const &a) : value(a * (1 << floatingIndex))
 {
-	std::cout << "constInt" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 }
-Fixed::Fixed(float const &a) : value((roundf(a * (1 << floatingIndex)))) {}
+Fixed::Fixed(float const &a) : value((roundf(a * (1 << floatingIndex))))
+{
+	std::cout << "Float constructor called" << std::endl;
+}
 
 Fixed &Fixed::operator=(Fixed const &rhs)
 {
@@ -45,6 +48,7 @@ int Fixed::toInt(void) const
 {
 	return this->value / (1 << floatingIndex);
 }
+
 float Fixed::toFloat(void) const
 {
 	float ret = (float)this->value / (1 << floatingIndex);
