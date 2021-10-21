@@ -17,11 +17,11 @@ public:
 	ClapTrap(ClapTrap const &);
 	ClapTrap &operator=(ClapTrap const &);
 
-	virtual void attack(std::string const &target) const;
+	void attack(std::string const &target) const;
 	void takeDamage(unsigned int amount) const;
 	void beRepaired(unsigned int amount) const;
 
-	virtual ~ClapTrap();
+	~ClapTrap();
 };
 
 #endif

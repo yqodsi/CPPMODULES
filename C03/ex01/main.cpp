@@ -1,11 +1,5 @@
 #include "ScavTrap.hpp"
 
-void events(ClapTrap const &t,  std::string name, int amount)
-{
-	t.attack(name);
-	t.takeDamage(amount);
-	t.beRepaired(amount);
-}
 
 int main()
 {
@@ -20,7 +14,6 @@ int main()
 	// Ar.takeDamage(10);
 
 	ScavTrap yahya;
-	events(yahya, "other", 20);
-	yahya.guardGate();
+	yahya.takeDamage(30);
 	return 0;
 }
