@@ -16,8 +16,7 @@ Animal::Animal(Animal const &obj) : _type(obj._type)
 Animal &Animal::operator=(Animal const &obj)
 {
     std::cout << "Animal assignement operator called" << std::endl;
-    if (this != &obj)
-        this->_type = obj._type;
+    _type = obj._type;
     return *this;
 }
 
