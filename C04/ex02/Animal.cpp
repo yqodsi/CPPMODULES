@@ -22,7 +22,7 @@ Animal &Animal::operator=(Animal const &obj)
 
 std::string Animal::getType(void) const { return _type; }
 
-void Animal::makeSound() const
+void Animal::makeSound()
 {
     std::cout << "animal sound" << std::endl;
 }

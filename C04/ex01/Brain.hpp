@@ -12,6 +12,8 @@ public:
     Brain();
     Brain(Brain const &obj);
     Brain &operator=(Brain const &obj);
+    void setBrain(std::string);
+    void getBrain();
     virtual ~Brain();
 };
 

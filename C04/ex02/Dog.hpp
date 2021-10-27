@@ -16,7 +16,9 @@ public:
     Dog(std::string const &type);
     Dog(Dog const &obj);
     Dog &operator=(Dog const &obj);
-    void makeSound() const;
+    void makeSound();
+    void setBrain(std::string str);
+    void getBrain();
     ~Dog();
 };
 #endif

@@ -19,9 +19,15 @@ int main()
 	// 	delete animal[i++];
 	// }
 
-	const Animal* j = new Dog();
-	const Animal* c = new Cat();
-	delete j;//should not create a leak
-	delete c;
+	Dog *dog1 = new Dog();
+	// Dog dog2 = *dog1;
+
+	dog1->setBrain("dog1_brain");
+	Dog dog2(*dog1);
+	// dog2.setBrain("dog2_brain");
+	dog1->getBrain();
+	dog2.getBrain();
+	// const Animal* c = new Cat();
+
 	return 0;
 }
