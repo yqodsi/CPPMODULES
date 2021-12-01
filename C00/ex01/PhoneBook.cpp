@@ -41,9 +41,9 @@ int PhoneBook::ShowContact(void)
 		std::cout << "NO DATA IN MEMORY! ADD FIRST!" << std::endl;
 	else
 	{
-		std::cout << "|-------------------------------------------|" << std::endl;
+		std::cout << "+-------------------------------------------+" << std::endl;
 		std::cout << "|   INDEX  |FIRST NAME| LAST NAME| NICKNAME |" << std::endl;
-		std::cout << "|-------------------------------------------|" << std::endl;
+		std::cout << "+-------------------------------------------+" << std::endl;
 		for (int i = 0; i < Index && i < 8; i++)
 		{
 			std::cout << "|";
@@ -57,7 +57,7 @@ int PhoneBook::ShowContact(void)
 			}
 			std::cout << std::endl;
 		}
-		std::cout << "|-------------------------------------------|" << std::endl;
+		std::cout << "+-------------------------------------------+" << std::endl;
 		if (Index < 0)
 			std::cout << "NO DATA IN MEMORY! ADD FIRST!" << std::endl;
 		else
@@ -72,6 +72,7 @@ int PhoneBook::ShowContact(void)
 				if (std::getline(std::cin, str).eof())
 					return (0);
 				std::stringstream(str) >> typingIndex;
+				std::cout << typingIndex << std::endl;
 				if (typingIndex > 0 && typingIndex < Index + 1 && typingIndex <= 8)
 				{
 					showContactByIndex(typingIndex - 1);

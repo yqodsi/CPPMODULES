@@ -1,33 +1,17 @@
-NAME = Animal
+NAME = AMateria
+CC = clang++
+FLAGS = -std=c++98 -Wall -Werror -Wextra
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-SRCS		=   main.cpp AMateria.cpp Ice.cpp
-HEADERS 	= 	AMateria.hpp Ice.hpp
-CC			= clang++
+%.o:%.cpp *.hpp
+	$(CC) $(FLAGS) -c $< -o $@
+all : $(NAME)
 
-CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98
-
-OBJS		= $(SRCS:%.cpp=%.o)
-
-RM			= rm -rf
-
-all: $(NAME)
-
-$(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
-
-
-%.o: %.cpp $(HEADERS)
-	$(CC) -c $(CPP_FLAGS) $< -o $@
-
-clean:
-	$(RM) $(OBJS)
-
-fclean: clean
-	$(RM) $(NAME)
-
-re: fclean all
-
-test: all
-	@clear
-	@./${NAME}
-.PHONY: all clean fclean re
+$(NAME) : $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+clean :
+	rm -rf *.o
+fclean : clean
+	rm -rf $(NAME)
+re : fclean all

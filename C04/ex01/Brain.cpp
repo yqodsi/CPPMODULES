@@ -28,7 +28,6 @@ void Brain::setBrain(std::string str)
         this->ideas[i] = str + std::to_string(i);
     }
 
-     
 }
 
 void Brain::getBrain()
